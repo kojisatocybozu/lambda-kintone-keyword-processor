@@ -1,0 +1,20 @@
+{
+  "name": "lambda-kintone-keyword-processor",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+    },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.32.1",
+  "dependencies": {
+    "@aws-sdk/client-lambda": "^3.1154.0",
+    "axios": "^1.20.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

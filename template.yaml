@@ -1,0 +1,27 @@
+
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Description: kintone keyword extraction processor
+
+Resources:
+  KeywordProcessorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: ks-kintone-keyword-processor-sam
+      Runtime: nodejs20.x
+      Handler: index.handler
+      CodeUri: dist/
+      Timeout: 300
+      MemorySize: 256
+      Environment:
+        Variables:
+          KINTONE_BASE_URL: https://si-team-dev.cybozu.com
+          EXTRACTOR_FUNCTION_NAME: ks-kintone-keyword-extractor
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - Statement:
+            - Effect: Allow
+              Action:
+                - lambda:InvokeFunction
+              Resource: !Sub arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:ks-kintone-keyword-extractor

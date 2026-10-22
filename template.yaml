@@ -1,4 +1,3 @@
-
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 
@@ -25,3 +24,9 @@ Resources:
               Action:
                 - lambda:InvokeFunction
               Resource: !Sub arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:ks-kintone-keyword-extractor
+    Events:
+      DailySchedule:
+        Type: Schedule
+        Properties:
+          Schedule: cron(0 2 * * ? *)
+          Enabled: true

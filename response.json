@@ -1,1 +1,1 @@
-{"statusCode":200,"body":"{\"candidates\":2,\"processed\":2,\"results\":[{\"recordId\":\"5\",\"success\":true,\"filesProcessed\":1},{\"recordId\":\"6\",\"success\":true,\"filesProcessed\":1}]}"}
+{"statusCode":200,"body":"{\"candidates\":1,\"processed\":1,\"results\":[{\"recordId\":\"1\",\"success\":true,\"filesProcessed\":1}]}"}
